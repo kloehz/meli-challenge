@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   entry: './index.tsx', // Indicamos el punto de inicio
   output: {
-      path: path.resolve(__dirname, 'build') // Indicamos carpeta de salida
+      path: path.resolve(__dirname, 'docs') // Indicamos carpeta de salida
   },
   resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx'], // Entendemos tsx
