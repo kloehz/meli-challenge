@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './index.tsx', // Indicamos el punto de inicio
+  entry: './src/index.tsx', // Indicamos el punto de inicio
   output: {
       path: path.resolve(__dirname, 'docs') // Indicamos carpeta de salida
   },
@@ -10,7 +10,7 @@ module.exports = {
       extensions: ['.ts', '.tsx', '.js', '.jsx'], // Entendemos tsx
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './index.html' }) // Generamos html
+    new HtmlWebpackPlugin({ template: './src/index.html' }) // Generamos html
   ],
   module: {
     rules: [
