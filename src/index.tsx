@@ -1,8 +1,8 @@
 import * as ReactDOM from 'react-dom';
-import { Home } from './views/Home';
 import './styles/main.scss'
+import { App } from './containers/App/App';
 
 ReactDOM.render(
-    <Home />,
+    <App />,
     document.getElementById('root')
 );

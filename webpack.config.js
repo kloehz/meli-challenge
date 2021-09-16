@@ -4,7 +4,8 @@ const path = require('path');
 module.exports = {
   entry: './src/index.tsx', // Indicamos el punto de inicio
   output: {
-      path: path.resolve(__dirname, 'docs') // Indicamos carpeta de salida
+      path: path.resolve(__dirname, 'docs'), // Indicamos carpeta de salida
+      publicPath: "/"
   },
   resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx'], // Entendemos tsx
@@ -57,6 +58,7 @@ module.exports = {
     // Abrimos el navegador al iniciar modo desarollo
     open: true,
     port: 3000,
+    historyApiFallback: true
   },
   // Genera otro build para mejorar la experiencia de desarrollo
   devtool: 'source-map'
