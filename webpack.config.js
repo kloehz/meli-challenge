@@ -11,7 +11,10 @@ module.exports = {
       extensions: ['.ts', '.tsx', '.js', '.jsx'], // Entendemos tsx
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }) // Generamos html
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      favicon: './src/assets/images/favicon.svg'
+    }) // Generamos html
   ],
   module: {
     rules: [

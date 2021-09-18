@@ -1,24 +1,30 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import * as queryString from "query-string";
-import { Products } from '../types/getItems';
+import { IGetItems } from '../types/getItems';
+import useCurrency from '../hooks/useCurrency';
 
 
 export const Items = () => {
         
-    const [products, setProducts] = useState<string[]>(['0']);
-    const location = useLocation();
-    console.log('oetruoe', location.state);
-    const { q: item } =  queryString.parse(location.search)
+    const location = useLocation<IGetItems>();
+    const { q: item } =  queryString.parse(location.search);
+    const { items } = location.state;
 
 
     return (
-        <>
+        <div className="items-container">
+            <h2>caterogias</h2>
             {
-                products.map((product, id) => {
-                    return <h2 key={id}>{product}</h2>
+                items.map(({picture, price}) => {
+                    return (
+                        <div>
+                            <img src={picture} height="150px"/>
+                            <h3>{useCurrency({...price})}</h3>
+                        </div>
+                    )
                 })
             }
-        </>
+        </div>
     )
 }

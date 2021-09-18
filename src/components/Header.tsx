@@ -4,17 +4,18 @@ import { useHistory } from "react-router-dom";
 import { apiGetItems } from '../api/searchItem';
 
 
-export const Header = memo(() => {
+export const Header = () => {
 
   const [input, setInput] = useState('');
   const history = useHistory();
 
-  const getProducts = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setInput(input.trim());
 
     if(input.length >= 1){
       apiGetItems(input).then((res) => {
-        history.push({pathname: "/items", search: `?q=${input}`, state: {...res.data} })
+        history.push({pathname: "/items", search: `?q=${input}`, state: res.data })
       })
     }
   }
@@ -28,7 +29,7 @@ export const Header = memo(() => {
   return (
     <div className="header">
       <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.16.1/mercadolibre/logo__large_plus.png" />
-      <div className="input-container">
+      <form className="input-container" onSubmit={handleSubmit}>
         <input
           type="text"
           className="input-header"
@@ -36,12 +37,13 @@ export const Header = memo(() => {
           onChange={e => handleInputChange(e)}
           value={input}
         />
-        <img
-          src={SearchImage}
-          className="search-icon"
-          onClick={getProducts}
-        />
-      </div>
+        <button type="submit" className="search-icon">
+          <img
+            src={SearchImage}
+            className="search-icon"
+          />
+        </button>
+      </form>
     </div>
     )
-})
+}
