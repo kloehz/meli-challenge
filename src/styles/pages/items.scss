@@ -1,4 +1,10 @@
 .items-container {
-    max-width: 80vw;
+    width: 80vw;
     margin: 0 auto;
+}
+
+.product-container {
+    display: flex;
+    background-color: white;
+    margin-bottom: 4px;
 }

@@ -7,8 +7,10 @@ const useCurrency = ({currency, amount, decimals}: Price) => {
     let setDecimals: string;
     if ( decimals === 0 ){
         setDecimals = '00';
+    } else {
+        setDecimals = decimals.toString();
     }
-    return currencyType + ' ' + amount + '.' + setDecimals;
+    return `${currencyType} ${amount}.${setDecimals}`;
 }
 
 export default useCurrency;

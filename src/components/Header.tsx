@@ -15,6 +15,7 @@ export const Header = () => {
 
     if(input.length >= 1){
       apiGetItems(input).then((res) => {
+        console.log(res);
         history.push({pathname: "/items", search: `?q=${input}`, state: res.data })
       })
     }
@@ -26,9 +27,19 @@ export const Header = () => {
     }
   }
 
+  const goHome = () => {
+    setInput('');
+    history.push('/');
+  }
+
   return (
     <div className="header">
-      <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.16.1/mercadolibre/logo__large_plus.png" />
+      
+      <img
+        src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.16.1/mercadolibre/logo__large_plus.png"
+        onClick={goHome}
+        className="logo-img"
+      />
       <form className="input-container" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -37,7 +48,7 @@ export const Header = () => {
           onChange={e => handleInputChange(e)}
           value={input}
         />
-        <button type="submit" className="search-icon">
+        <button type="submit" className="search-button">
           <img
             src={SearchImage}
             className="search-icon"

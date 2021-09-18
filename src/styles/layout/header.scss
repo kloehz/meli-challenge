@@ -6,6 +6,10 @@
     align-items: center;
 }
 
+.logo-img:hover {
+    cursor: pointer;
+}
+
 .input-header {
     height: 4vh;
     border: 0;
@@ -22,15 +26,19 @@
     display: flex;
     align-items: center;
 
-    .search-icon {
-        width: 20px;
+    .search-button {
+        background-color: $backgrond-color;
+        width: 40px;
         height: 4vh;
         padding: 0 5px;
-        background-color: white;
         border: 0;
+    }
+
+    .search-icon {
+        width: 20px;
     }
 }
 
-.search-icon:hover {
+.search-button:hover {
     cursor: pointer;
 }

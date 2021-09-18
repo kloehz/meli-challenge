@@ -18,6 +18,7 @@ export interface Item {
     picture:      string;
     condition:    Condition;
     free_shiping: boolean;
+    seller_address: string;
 }
 
 export enum Condition {
