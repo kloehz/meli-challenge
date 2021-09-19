@@ -1,30 +1,41 @@
+.header-container {
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+}
+
 .header {
     background-color: $primary-color;
     height: 8vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    width: 1024px;
 }
 
-.logo-img:hover {
-    cursor: pointer;
+
+.logo-img {
+    margin-right: 10px;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .input-header {
     height: 4vh;
     border: 0;
     padding: 0 10px;
-    width: 65vw;
-}
-
-.input-header:focus {
-    outline: none;
+    width: 100%;
+    &:focus {
+        outline: none;
+    }
 }
 
 
 .input-container {
     display: flex;
     align-items: center;
+    width: 100%;
 
     .search-button {
         background-color: $backgrond-color;
@@ -39,6 +50,8 @@
     }
 }
 
-.search-button:hover {
-    cursor: pointer;
+.search-button {
+    &:hover {
+        cursor: pointer;
+    }
 }

@@ -1,10 +1,21 @@
 .items-container {
-    width: 80vw;
+    max-width: 1024px;
     margin: 0 auto;
+
 }
 
 .product-container {
     display: flex;
     background-color: white;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
+    padding: 10px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.title-container {
+    margin: 1em 0 0 1em;
+    width: 65%;
 }
