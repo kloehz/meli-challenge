@@ -1,18 +1,24 @@
-import { useState } from 'react';
+import { useState, } from 'react';
 import SearchImage from "../../assets/images/SearchImage.svg";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { apiGetItems } from '../../api/searchItem';
+import * as queryString from "query-string";
 
 
 export const Header = () => {
   const [input, setInput] = useState('');
   const history = useHistory();
+  const location  = useLocation()
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setInput(input.trim());
 
-    if(input.length >= 1){
+    const { q: title } =  queryString.parse(location.search);
+    const currentLocation = location.pathname.slice(1, location.pathname.length);
+    const sameSearch = input === title && "items" === currentLocation;
+
+    if(input.length >= 1 && !sameSearch){
       apiGetItems(input).then((res) => {
         history.push({pathname: "/items", search: `?q=${input}`, state: res.data })
       })

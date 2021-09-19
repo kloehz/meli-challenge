@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import * as queryString from "query-string";
 import { IGetItems } from '../types/getItems';
-import useCurrency from '../hooks/useCurrency';
 import {Helmet} from "react-helmet";
 import { useCapitalize } from '../hooks/useCapitalize';
 import { ItemsContainer } from '../components/items/ItemsContainer';
