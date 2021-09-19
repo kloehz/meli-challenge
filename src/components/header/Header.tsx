@@ -1,11 +1,10 @@
-import { memo, useState } from 'react';
+import { useState } from 'react';
 import SearchImage from "../../assets/images/SearchImage.svg";
 import { useHistory } from "react-router-dom";
 import { apiGetItems } from '../../api/searchItem';
 
 
 export const Header = () => {
-
   const [input, setInput] = useState('');
   const history = useHistory();
 
@@ -15,7 +14,6 @@ export const Header = () => {
 
     if(input.length >= 1){
       apiGetItems(input).then((res) => {
-        console.log(res);
         history.push({pathname: "/items", search: `?q=${input}`, state: res.data })
       })
     }

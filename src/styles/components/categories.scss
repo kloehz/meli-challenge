@@ -1,0 +1,19 @@
+.categories-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.category {
+    &:hover {
+        cursor: pointer;
+    }
+    &::after {
+        content: ' > ';
+        padding: 0 5px;
+        cursor: default;
+    }
+}
+
+.category:last-child::after {
+    content: '';
+}

@@ -15,7 +15,17 @@
     }
 }
 
+.item-image {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+}
+
 .title-container {
     margin: 1em 0 0 1em;
     width: 65%;
+}
+
+.seller-address {
+    margin-top: 2em;
 }
