@@ -5,13 +5,10 @@ import { Price } from "../types/getItems";
 const useCurrency = ({currency, amount, decimals}: Price) => {
     const currencyType = getCurrency(currency);
     let newAmount: string;
-    if ( decimals === 0 ){
-        newAmount = new Intl.NumberFormat().format(amount) + '.00'
-    } else {
-        newAmount = (new Intl.NumberFormat().format(amount + decimals/100)).toString()
-    }
+    newAmount = new Intl.NumberFormat().format(Number(amount)).toString();
+    const decimalsString = decimals === 0 ? `${decimals.toString()}0` : decimals.toString();
 
-    return `${currencyType} ${newAmount}`;
+    return {currency: currencyType, amount, decimals: decimalsString};
 }
 
 export default useCurrency;

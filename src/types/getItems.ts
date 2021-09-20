@@ -28,6 +28,6 @@ export enum Condition {
 
 export interface Price {
     currency: string;
-    amount:   number;
-    decimals: number;
+    amount:   number | string;
+    decimals: number | string;
 }

@@ -14,6 +14,16 @@
     border-radius: 5px;
 }
 
+.item-detail-price {
+    font-size: 36px;
+    width: fit-content;
+    display: flex;
+}
+
+.item-detail-decimals {
+    font-size: 20px;
+}
+
 .item-image-price-container {
     height: 65%;
     display: flex;
@@ -23,16 +33,14 @@
         font-size: 22px;
     }
 
-    img {
-        max-width: 100%;
-        margin-right: 30px;
-    }
 }
 
-.item-detail-condition-selled {
-    font-size: 14px;
-    color: $gray;
-
+.item-detail-image-container {
+    width: 70%;
+    display: flex;
+    img {
+        margin: 0 auto;
+    }
 }
 
 .item-detail-to-buy-container {
@@ -41,8 +49,10 @@
     width: 30%;
 }
 
-.item-detail-price {
-    font-size: 36px;
+.item-detail-condition-selled {
+    font-size: 14px;
+    color: $gray;
+
 }
 
 .item-detail-buy-button {
@@ -66,4 +76,13 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
+    .desc-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .desc-info {
+        color: $gray;
+    }
 }

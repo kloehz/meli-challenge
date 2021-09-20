@@ -1,6 +1,7 @@
 import useCurrency from '../../hooks/useCurrency';
 import { Item } from '../../types/getItems';
 import { useHistory } from 'react-router-dom';
+import { Prices } from '../prices/Prices';
 
 export const ItemsContainer = ({id, picture, title, price, seller_address}: Item) => {
 
@@ -8,7 +9,9 @@ export const ItemsContainer = ({id, picture, title, price, seller_address}: Item
 
     const handleClick = () => {
             history.push({pathname: `/items/${id}`});
-    }
+    };
+
+    const parsedPrice = useCurrency({...price});
 
     return (
         <div className="product-container" onClick={handleClick}>
@@ -17,8 +20,8 @@ export const ItemsContainer = ({id, picture, title, price, seller_address}: Item
                 className="item-image"
             />
         <div className="title-container">
-                <h3>{useCurrency({...price})}</h3>
-                <h4>{title}</h4>
+            <Prices price={parsedPrice} style='item' />
+            <h4>{title}</h4>
             </div>
             <h4 className="seller-address">{seller_address}</h4>
         </div>
