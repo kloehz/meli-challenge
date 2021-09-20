@@ -8,7 +8,7 @@ import * as queryString from "query-string";
 export const Header = () => {
   const [input, setInput] = useState('');
   const history = useHistory();
-  const location  = useLocation()
+  const location  = useLocation();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,6 +21,8 @@ export const Header = () => {
     if(input.length >= 1 && !sameSearch){
       apiGetItems(input).then((res) => {
         history.push({pathname: "/items", search: `?q=${input}`, state: res.data })
+      }).catch((error) => {
+        console.log(error);
       })
     }
   }

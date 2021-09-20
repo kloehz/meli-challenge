@@ -1,0 +1,16 @@
+.spinner-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+}
+
+.spinner-image {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -200px;
+    z-index: 99;
+}

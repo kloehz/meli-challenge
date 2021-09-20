@@ -1,9 +1,17 @@
-import useCurrency from '../../hooks/useCurrency'
-import { Item } from '../../types/getItems'
+import useCurrency from '../../hooks/useCurrency';
+import { Item } from '../../types/getItems';
+import { useHistory } from 'react-router-dom';
 
-export const ItemsContainer = ({picture, title, price, seller_address}: Item) => {
+export const ItemsContainer = ({id, picture, title, price, seller_address}: Item) => {
+
+    const history = useHistory();
+
+    const handleClick = () => {
+            history.push({pathname: `/items/${id}`});
+    }
+
     return (
-        <div className="product-container">
+        <div className="product-container" onClick={handleClick}>
             <img
                 src={picture}
                 className="item-image"
