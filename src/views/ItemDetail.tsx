@@ -15,7 +15,6 @@ export const ItemDetail = () => {
     useEffect(() => {
         apiGetItemDetails(location.pathname.slice(7, location.pathname.length)).then((res) => {
             setItem(res.data.item);
-            console.log(res.data.item)
             setPrice(() => useCurrency(res.data.item.price));
             setIsLoading(false)
         }).catch((error) => {
@@ -30,17 +29,30 @@ export const ItemDetail = () => {
                 : <div className="item-detail-page">
                     <div className="item-detail-container">
                             <div className="item-image-price-container">
-                                <img src={item.picture} className="item-detail-image"/>
-                                <div className="item-detail-condition-selled">
-                                <h6>
-                                    {item.condition} - {item.sold_quantity} vendido(s)
-                                </h6>
-                                <h6 className="item-detail-title">
-                                    {item.title}
-                                </h6>
-                                <h6>
-                                    {price}
-                                </h6>
+                                <img src={item.picture}/>
+                                <div className="item-detail-to-buy-container">
+                                    <span className="item-detail-condition-selled" >
+                                        {item.condition} - {item.sold_quantity} vendido(s)
+                                    </span>
+                                    <h1 className="item-detail-title">
+                                        {item.title}
+                                    </h1>
+                                    <span className="item-detail-price">
+                                        {price}
+                                    </span>
+                                <button className="item-detail-buy-button">Comprar</button>
+                                </div>
+                            </div>
+                            <div className="item-detail-description-container">
+                                <div>
+                                    <span>
+                                        Descripcion del producto
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>
+                                        {item.description}
+                                    </span>
                                 </div>
                             </div>
                     </div>

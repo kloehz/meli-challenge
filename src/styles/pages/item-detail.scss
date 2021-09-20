@@ -5,25 +5,65 @@
 }
 
 .item-detail-container {
-    width: 1024px;
+    width: calc(1024px - 60px);
+    padding: 30px;
     display: flex;
+    flex-direction: column;
     background-color: white;
     margin: 10px;
     border-radius: 5px;
 }
 
 .item-image-price-container {
-    margin: 30px;
     height: 65%;
-    width: 100%;
     display: flex;
     justify-content: space-between;
-}
+    
+    h1 {
+        font-size: 22px;
+    }
 
-.item-detail-image {
-    height: 70%;
+    img {
+        max-width: 100%;
+        margin-right: 30px;
+    }
 }
 
 .item-detail-condition-selled {
+    font-size: 14px;
+    color: $gray;
+
+}
+
+.item-detail-to-buy-container {
+    display: flex;
+    flex-direction: column;
     width: 30%;
+}
+
+.item-detail-price {
+    font-size: 36px;
+}
+
+.item-detail-buy-button {
+    background-color: $blue;
+    transition: background-color .5s ease-in-out;
+    margin-top: 50px;
+    color: white;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+
+    &:hover {
+        background-color: $dark-blue;
+        transition: .5s;
+    }
+}
+
+.item-detail-description-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
