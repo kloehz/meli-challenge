@@ -1,0 +1,29 @@
+.item-detail-page {
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+}
+
+.item-detail-container {
+    width: 1024px;
+    display: flex;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.item-image-price-container {
+    margin: 30px;
+    height: 65%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-detail-image {
+    height: 70%;
+}
+
+.item-detail-condition-selled {
+    width: 30%;
+}
