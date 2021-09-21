@@ -5,6 +5,8 @@ import {Helmet} from "react-helmet";
 import { useCapitalize } from '../hooks/useCapitalize';
 import { ItemsContainer } from '../components/items/ItemsContainer';
 import { Categories } from '../components/items/Categories';
+import { Seo } from '../components/seo/Seo';
+import { NotResuts } from '../components/items/NotResuts';
 
 
 export const Items = () => {
@@ -16,18 +18,16 @@ export const Items = () => {
 
     return (
         <>
-        {/* Temporal / Prueba */}
-            <Helmet>
-                <title>{capitalizedTitle} | Mercado Libre</title>
-            </Helmet>
+            <Seo title={capitalizedTitle} />
             <div className="items-container">
                 {
-                    categories && <Categories categories={categories}/>
+                    categories.length > 0 && <Categories categories={categories}/>
                 }
                 {
-                    items.map((item) => {
+                    items.length ? items.map((item) => {
                         return <ItemsContainer key={item.id} {...item} />
                     })
+                    : <NotResuts />
                 }
             </div>
         </>
