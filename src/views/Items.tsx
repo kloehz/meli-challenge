@@ -19,16 +19,18 @@ export const Items = () => {
     return (
         <>
             <Seo title={capitalizedTitle} />
-            <div className="items-container">
-                {
-                    categories.length > 0 && <Categories categories={categories}/>
-                }
-                {
-                    items.length ? items.map((item) => {
-                        return <ItemsContainer key={item.id} {...item} />
-                    })
-                    : <NotResuts />
-                }
+            <div className="items-page">
+                <div className="items-container">
+                    {
+                        categories.length > 0 && <Categories categories={categories}/>
+                    }
+                    {
+                        items.length ? items.map((item) => {
+                            return <ItemsContainer key={item.id} {...item} />
+                        })
+                        : <NotResuts />
+                    }
+                </div>
             </div>
         </>
     )
