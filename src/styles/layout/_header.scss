@@ -6,7 +6,7 @@
 
 .header {
     background-color: $primary-color;
-    height: 8vh;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@
 }
 
 .input-header {
-    height: 4vh;
+    height: 30px;
     border: 0;
     padding: 0 10px;
     width: 100%;
@@ -41,7 +41,7 @@
     .search-button {
         background-color: $backgrond-color;
         width: 40px;
-        height: 4vh;
+        height: 30px;
         padding: 0 5px;
         border: 0;
     }
