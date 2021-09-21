@@ -15,14 +15,17 @@
     }
 }
 
-.item-image {
+.item-image-container {
     width: 160px;
-    height: 160px;
-    object-fit: contain;
+    img {
+        width: 160px;
+        height: 160px;
+        object-fit: contain;
+    }
 }
 
 .title-container {
-    margin: 1em 0 0 1em;
+    padding: 1em 8em 0 2em;
     width: 65%;
 
     .item-price {
@@ -38,6 +41,10 @@
     
 }
 
-.seller-address {
-    margin-top: 2em;
+.seller-address-container {
+    width: 25%;
+    
+    .seller-address {
+        margin-top: 2em;
+    }
 }

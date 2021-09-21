@@ -15,15 +15,16 @@ export const ItemsContainer = ({id, picture, title, price, seller_address}: Item
 
     return (
         <div className="product-container" onClick={handleClick}>
-            <img
-                src={picture}
-                className="item-image"
-            />
+            <div className="item-image-container">
+                <img src={picture} />
+            </div>
         <div className="title-container">
             <Prices price={parsedPrice} style='item' />
-            <h4>{title}</h4>
+                <h4>{title}</h4>
             </div>
-            <h4 className="seller-address">{seller_address}</h4>
+            <div className="seller-address-container">
+                <h4 className="seller-address">{seller_address}</h4>
+            </div>
         </div>
     )
 }
