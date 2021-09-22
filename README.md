@@ -13,7 +13,7 @@ Este proyecto fue creado desde cero con `npm init` y se le adjunto:
 
 Este cuenta con sus test en enzyme y jest.
 
-## Como inicar el proyecto
+## Como iniciar el proyecto
 
 Clonar el repositorio, instalar sus modulos con `npm i` o `npm install`
 Para ejecutarlo ejecutar `npm start` o `npm run dev`, este se abrira en el puerto 3000, en caso de querer cambiarlo se encuentra configurado en webpack.
