@@ -6,7 +6,6 @@ interface ITitle {
 
 export const Seo = ({title}: ITitle) => {
 
-
     return (
         <Helmet>
             <title>{`${title} | Mercado Libre`}</title>

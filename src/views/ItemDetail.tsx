@@ -1,11 +1,11 @@
-import { useEffect, useState, } from "react";
+import { memo, useEffect, useState, } from "react";
 import { useLocation } from "react-router-dom";
 import { apiGetItemDetails } from "../api/itemDetail";
 import { IGetItemDetail, Item, Price } from "../types/getItemDetail";
 import { Spinner } from "../components/loader/Spinner";
 import { ItemDetailContainer } from "../components/item-detail/ItemDetailContainer";
 
-export const ItemDetail = () => {
+export const ItemDetail =  memo(() => {
 
     const location = useLocation<IGetItemDetail>();
     const [isLoading, setIsLoading] = useState(true);
@@ -29,4 +29,4 @@ export const ItemDetail = () => {
                 </div>
             )
     )
-}
+})

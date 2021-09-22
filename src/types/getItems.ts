@@ -16,14 +16,9 @@ export interface Item {
     title:        string;
     price:        Price;
     picture:      string;
-    condition:    Condition;
+    condition:    string;
     free_shiping: boolean;
     seller_address: string;
-}
-
-export enum Condition {
-    Nuevo = "Nuevo",
-    Usado = "Usado",
 }
 
 export interface Price {

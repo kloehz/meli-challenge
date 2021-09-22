@@ -9,8 +9,11 @@ export const NotFound = () => {
             <Seo title="Not Found" />
             <div className="not-found-container">
                 <img src={NotFoundSvg} />
-                <h3>La pagina solicitada no existe</h3>
-                <Link to="/" className="not-found-link">Ir a la pagina principal</Link>
+                <h3 data-testid="not-found-text">La pagina solicitada no existe</h3>
+                <Link
+                    to="/"
+                    className="not-found-link"
+                >Ir a la pagina principal</Link>
             </div>
         </>
     )

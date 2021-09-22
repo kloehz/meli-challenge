@@ -1,9 +1,9 @@
-import { shallow } from "enzyme";
+import { shallow } from "enzyme"
 import { Link } from "react-router-dom";
-import { NotFound } from "./NotFound";
+import { NotResuts } from "./NotResuts"
 
-describe('NotFound Page Test', () => {
-    const wrapper = shallow( <NotFound /> );
+describe('NotResults Component tests', () => {
+    const wrapper = shallow(<NotResuts />);
 
     test('should be render correctly', () => {
         expect(wrapper).toMatchSnapshot();
@@ -15,10 +15,8 @@ describe('NotFound Page Test', () => {
     });
 
     test('should be show the correct text', () => {
-        const text = wrapper.find('h3');
-        expect(text.text()).toBe('La pagina solicitada no existe');
+        expect(wrapper.find('h2').text()).toBe('No se encrontraron resultados para su busqueda.');
     })
-    
     
     
 })

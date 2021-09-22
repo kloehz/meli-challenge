@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories tests should be match snapshot 1`] = `ShallowWrapper {}`;
