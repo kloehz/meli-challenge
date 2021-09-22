@@ -14,7 +14,6 @@ export const ItemDetail =  () => {
 
     useEffect(() => {
         apiGetItemDetails(location.pathname.slice(7, location.pathname.length)).then((res) => {
-            console.log(res);
             setItem(res.data.item);
             setIsLoading(false)
         }).catch((error) => {

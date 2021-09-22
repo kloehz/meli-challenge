@@ -36,10 +36,11 @@
 }
 
 .item-detail-image-container {
-    width: 70%;
+    width: 65%;
     display: flex;
     img {
         margin: 0 auto;
+        object-fit: contain;
     }
 }
 

@@ -63,5 +63,8 @@ module.exports = {
     historyApiFallback: true
   },
   // Genera otro build para mejorar la experiencia de desarrollo
-  devtool: 'source-map'
+  devtool: 'source-map',
+  performance: {
+    hints: false,
+  }
 }
