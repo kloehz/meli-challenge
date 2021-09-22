@@ -4,16 +4,17 @@ import { apiGetItemDetails } from "../api/itemDetail";
 import { IGetItemDetail, Item, Price } from "../types/getItemDetail";
 import { Spinner } from "../components/loader/Spinner";
 import { ItemDetailContainer } from "../components/item-detail/ItemDetailContainer";
+import { NotFound } from "./NotFound";
 
 export const ItemDetail =  () => {
 
     const location = useLocation<IGetItemDetail>();
     const [isLoading, setIsLoading] = useState(true);
     const [item, setItem] = useState<Item>();
-    console.log('atonerunt')
 
     useEffect(() => {
         apiGetItemDetails(location.pathname.slice(7, location.pathname.length)).then((res) => {
+            console.log(res);
             setItem(res.data.item);
             setIsLoading(false)
         }).catch((error) => {
@@ -25,9 +26,11 @@ export const ItemDetail =  () => {
             (
                 isLoading
                 ? <Spinner />
-                : <div className="item-detail-page">
-                    <ItemDetailContainer {...item} />
-                </div>
+                : item
+                    ? <div className="item-detail-page">
+                        <ItemDetailContainer {...item} />
+                        </div>
+                    : <NotFound />
             )
     )
 }

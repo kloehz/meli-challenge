@@ -1,9 +1,7 @@
 import { shallow } from "enzyme"
-import useCurrency from "../../hooks/useCurrency";
 import { ItemsContainer } from "./ItemsContainer"
 
 const mockHistoryPush = jest.fn();
-const mockUseCurrency = jest.fn();
 
 jest.mock('react-router', () => ({
     // @ts-ignore

@@ -1,7 +1,7 @@
 import { shallow } from "enzyme"
 import { Items } from "./Items"
 import { Categories } from "../components/items/Categories"
-import { ItemsContainer } from "../components/items/ItemsContainer";
+import { Spinner } from "../components/loader/Spinner"
 
 jest.mock('react-router-dom', () => ({
     // @ts-ignore
@@ -24,11 +24,15 @@ describe('Items Page test', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('should be render categories', () => {
-        expect(wrapper.containsMatchingElement(<Categories categories={["Hogar, Muebles y Jardín","Bazar y Cocina","Vajilla y Artículos de Servir","Vajilla","Vasos"]} />))
+    test('should be render Spinner', () => {
+        expect(wrapper.containsMatchingElement(<Spinner />))
         .toEqual(true);
     });
-    
+
+    // test('should be render categories', () => {
+    //     expect(wrapper.containsMatchingElement(<Categories categories={["Hogar, Muebles y Jardín","Bazar y Cocina","Vajilla y Artículos de Servir","Vajilla","Vasos"]} />))
+    //     .toEqual(true);
+    // })
 
     // test('should be not render categories', () => {
     //     jest.mock('react-router-dom', () => ({

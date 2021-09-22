@@ -18,7 +18,6 @@ export const Items = () => {
     const [data, setData] = useState<IGetItems>()
     const capitalizedTitle = useCapitalize(title.toString());
 
-    // TODO hacer llamada al ws
     useEffect(() => {
         if (!location.state ) {
             apiGetItems(title.toString()).then(res => {
@@ -27,7 +26,7 @@ export const Items = () => {
         } else {
             setData(location.state);
         };
-    }, []);
+    }, [location.state]);
         
     return (
         data
