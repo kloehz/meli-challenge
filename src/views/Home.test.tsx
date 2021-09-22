@@ -18,6 +18,4 @@ describe('Home screen Tests', () => {
         expect(wrapper.containsMatchingElement(<Seo />)).toEqual(true);
     });
     
-    
-    
 })

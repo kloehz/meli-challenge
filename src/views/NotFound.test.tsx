@@ -19,6 +19,4 @@ describe('NotFound Page Test', () => {
         expect(text.text()).toBe('La pagina solicitada no existe');
     })
     
-    
-    
 })

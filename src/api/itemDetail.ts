@@ -1,6 +1,6 @@
 import { IGetItemDetail } from "../types/getItemDetail";
-import { axiosConfig } from "./axiosConfig";
+import { axiosClient } from "./axiosClient";
 
 export const apiGetItemDetails = (id: string) => {
-  return axiosConfig.get<IGetItemDetail>(`/items/${id}`);
+  return axiosClient.get<IGetItemDetail>(`/items/${id}`);
 }

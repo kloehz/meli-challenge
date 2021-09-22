@@ -1,6 +1,6 @@
 import { IGetItems } from "../types/getItems";
-import { axiosConfig } from "./axiosConfig";
+import { axiosClient } from "./axiosClient";
 
 export const apiGetItems = (query: string) => {
-  return axiosConfig.get<IGetItems>(`/items?q=:${query}`);
+  return axiosClient.get<IGetItems>(`/items?q=:${query}`);
 }
