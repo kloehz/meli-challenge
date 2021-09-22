@@ -12,7 +12,19 @@ export const Items = () => {
         
     const location = useLocation<IGetItems>();
     const { q: title } =  queryString.parse(location.search);
-    const { items, categories } = location.state;
+
+    if (!location.state ) {
+        location.state = {
+            author: {
+                name: 'Guido Leonel',
+                lastname: 'Cotelesso'
+            },
+            items: [],
+            categories: []
+        }
+    }
+    
+    const { items = [], categories = [] } = location.state;
     const capitalizedTitle = useCapitalize(title.toString());
 
     return (

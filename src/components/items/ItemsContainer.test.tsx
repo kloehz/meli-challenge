@@ -26,7 +26,7 @@ const itemMock = {
     },
     "seller_address":"Capital Federal",
     "condition": "Nuevo",
-    "free_shiping": true
+    "free_shipping": true
 }
 
 describe('ItemsContainer tests', () => {
